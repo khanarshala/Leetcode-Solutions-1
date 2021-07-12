@@ -1,0 +1,12 @@
+class Solution {
+public:
+    bool validMountainArray(vector<int>& arr) {
+        int num = arr[0];
+        int i = 1;
+        bool increasing = false;
+        bool decreasing = false;
+        while(i <arr.size() && num < arr[i])  num = arr[i++], increasing = true;
+        while(i <arr.size() && num > arr[i])  num = arr[i++], decreasing = true;
+        return i == arr.size() && increasing && decreasing;
+    }
+};
